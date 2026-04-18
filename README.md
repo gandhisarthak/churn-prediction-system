@@ -1,17 +1,5 @@
 # 🚀 Customer Churn Prediction System (End-to-End ML Project)
 
-## 📌 Overview
-This project is an end-to-end machine learning system designed to predict customer churn using real-world telecom data.
-
-It covers the full ML lifecycle:
-- Data preprocessing & feature engineering  
-- Model training using scikit-learn  
-- Pipeline creation to avoid data leakage  
-- API development with FastAPI  
-- Deployment on cloud (Render)  
-
-👉 The system provides **real-time churn predictions via a live API**
-
 ---
 
 ## 🌍 Live Demo
@@ -20,6 +8,10 @@ It covers the full ML lifecycle:
 https://churn-prediction-system-1-zffv.onrender.com/docs
 
 ---
+
+## 📸 API Demo
+
+![API Demo](https://github.com/user-attachments/assets/6cfea7b3-660d-4b4c-bf07-e0afacf7fcec)
 
 ## ⚙️ Tech Stack
 
@@ -41,21 +33,7 @@ This project predicts whether a customer will churn based on behavioral and serv
 
 ---
 
-## 📊 Dataset
-
-- Telco Customer Churn Dataset (Kaggle)  
-- Features include:
-  - Tenure  
-  - Monthly Charges  
-  - Contract Type  
-  - Internet Service  
-  - Payment Method  
-
----
-
 ## 🔧 Feature Engineering
-
-Key engineered features:
 
 - **AvgMonthlySpend**  
   → Captures customer spending behavior over time  
@@ -68,9 +46,11 @@ Key engineered features:
 ## 🤖 Model
 
 - Algorithm: **Random Forest Classifier**  
-- Used `Pipeline` and `ColumnTransformer` for:
+
+- Used Pipeline and ColumnTransformer for:
   - Scaling numerical features  
   - Encoding categorical features  
+
 - Prevents data leakage and ensures reproducibility  
 
 ---
@@ -83,44 +63,30 @@ Key engineered features:
 
 ---
 
-## 🧩 System Architecture
-User → Streamlit UI → FastAPI → ML Pipeline → Prediction
+## 🧠 Key Business Insights
 
+- Customers with **shorter tenure** are more likely to churn  
+- **Month-to-month contracts** show higher churn rates  
+- Customers using **electronic check payments** have higher churn probability  
+- Higher **monthly charges** correlate with increased churn risk  
+
+---
+
+## 🧩 System Architecture
+
+User → Streamlit UI → FastAPI → ML Pipeline → Prediction
 
 ---
 
 ## 🚀 API Endpoints
 
-### `GET /`
-Health check
+### GET /
+Health check  
 
-### `POST /predict`
-Returns churn prediction
+### POST /predict
+Returns churn prediction  
 
-#### Example Input:
-```json
-{
-  "gender": "Male",
-  "SeniorCitizen": 0,
-  "Partner": "Yes",
-  "Dependents": "No",
-  "tenure": 5,
-  "PhoneService": "Yes",
-  "MultipleLines": "No",
-  "InternetService": "Fiber optic",
-  "OnlineSecurity": "No",
-  "OnlineBackup": "Yes",
-  "DeviceProtection": "No",
-  "TechSupport": "No",
-  "StreamingTV": "Yes",
-  "StreamingMovies": "Yes",
-  "Contract": "Month-to-month",
-  "PaperlessBilling": "Yes",
-  "PaymentMethod": "Electronic check",
-  "MonthlyCharges": 70,
-  "TotalCharges": 350
-}
-```
+---
 
 ## 🐳 Docker Support
 
@@ -150,4 +116,3 @@ The application is containerized using Docker for consistent and reproducible de
 ## 👨‍💻 Author
 
 **Sarthak Gandhi**  
- 
